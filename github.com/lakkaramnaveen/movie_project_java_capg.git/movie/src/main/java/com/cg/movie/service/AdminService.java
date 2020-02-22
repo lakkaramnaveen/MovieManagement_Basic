@@ -11,9 +11,9 @@ public interface AdminService {
 
 	public boolean deleteTheater(int theaterId) throws MovieException;
 
-	public Screen addScreen(int theaterId, Screen screen) throws MovieException;
+	public Screen addScreen(Screen screen) throws MovieException;
 
-	public boolean deleteScreen(int theaterId, int screenId) throws MovieException;
+	public boolean deleteScreen(int screenId) throws MovieException;
 
 	public boolean validateTheaterId(int id) throws MovieException;
 

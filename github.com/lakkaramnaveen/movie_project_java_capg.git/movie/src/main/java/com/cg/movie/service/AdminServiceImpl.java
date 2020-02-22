@@ -67,7 +67,7 @@ public class AdminServiceImpl implements AdminService {
 	}
 
 	@Override // it is used inorder not to create a logical bug
-	public Screen addScreen(int theaterId, Screen screen) throws MovieException {
+	public Screen addScreen( Screen screen) throws MovieException {
 		int id = screen.getScreenId();// getting screen id
 
 		boolean flag = validateScreenId(id);// calling validateScreenId with passing id
@@ -83,13 +83,13 @@ public class AdminServiceImpl implements AdminService {
 			throw new MovieException("Screen Name must not be Null ");
 		}
 
-		Screen sc = adminDao.addScreen(theaterId, screen);// calling addScreen
+		Screen sc = adminDao.addScreen(screen);// calling addScreen
 
 		return sc;// returning Screen object to Client class
 	}
 
 	@Override
-	public boolean deleteScreen(int theaterId, int screenId) throws MovieException {
+	public boolean deleteScreen(int screenId) throws MovieException {
 
 		boolean flag = validateScreenId(screenId);// calling validateScreenId
 
@@ -97,7 +97,7 @@ public class AdminServiceImpl implements AdminService {
 			throw new MovieException("Screen Id must be 4 digit ");
 		}
 
-		boolean flag1 = adminDao.deleteScreen(theaterId, screenId);// calling deleteScreen from dao layer
+		boolean flag1 = adminDao.deleteScreen(screenId);// calling deleteScreen from dao layer
 
 		return flag1;
 	}

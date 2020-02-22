@@ -1,0 +1,12 @@
+com\cg\movie\bean\Admin.class
+com\cg\movie\bean\Movie.class
+com\cg\movie\bean\Screen.class
+com\cg\movie\service\AdminService.class
+com\cg\movie\dao\AdminDao.class
+com\cg\movie\bean\Show.class
+com\cg\movie\dao\AdminDaoImpl.class
+com\cg\movie\service\AdminServiceImpl.class
+com\cg\movie\exception\MovieException.class
+com\cg\movie\bean\User.class
+com\cg\movie\pl\Client.class
+com\cg\movie\bean\Theater.class

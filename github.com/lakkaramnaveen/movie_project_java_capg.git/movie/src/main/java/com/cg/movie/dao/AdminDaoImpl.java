@@ -55,7 +55,7 @@ public class AdminDaoImpl implements AdminDao {
 	}
 
 	@Override
-	public Screen addScreen(int theaterId, Screen screen) throws MovieException {// addScreen method
+	public Screen addScreen(Screen screen) throws MovieException {// addScreen method
 
 		int screenId = screen.getScreenId();// getting screen id
 		List<Integer> list1 = listOfScreens.stream().map(p -> p.getScreenId()).collect(Collectors.toList());
@@ -72,7 +72,7 @@ public class AdminDaoImpl implements AdminDao {
 	}
 
 	@Override
-	public boolean deleteScreen(int theaterId, int screenId) throws MovieException {
+	public boolean deleteScreen(int screenId) throws MovieException {
 		boolean flag = false;
 
 		List<Integer> list1 = listOfScreens.stream().map(p -> p.getScreenId()).collect(Collectors.toList());
