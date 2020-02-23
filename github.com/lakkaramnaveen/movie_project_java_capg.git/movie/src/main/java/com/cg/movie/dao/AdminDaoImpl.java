@@ -49,7 +49,7 @@ public class AdminDaoImpl implements AdminDao {
 			map.remove(theaterId);// removing theater using theaterId as key
 			return flag;
 		} else {
-			throw new MovieException(theaterId + "Id is not found");
+			throw new MovieException(theaterId + " Id is not found");
 		}
 
 	}

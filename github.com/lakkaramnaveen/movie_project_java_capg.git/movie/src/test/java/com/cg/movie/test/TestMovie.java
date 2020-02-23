@@ -62,18 +62,18 @@ class TestMovie {
 	@Test
 	public void testAddScreen() throws Exception {
 		theater = new Theater(2134, "shiva", "hyderabad", null, null, "rahul", "9876543210");
-		Theater th=adminDao.addTheater(theater);
-		screen = new Screen(1133 ,th.getTheaterId(),"screen1", null, null, 12, 12);
+		Theater th = adminDao.addTheater(theater);
+		screen = new Screen(1133, th.getTheaterId(), "screen1", null, null, 12, 12);
 		Screen sc = adminDao.addScreen(screen);
-		assertEquals(1133,sc.getScreenId());
+		assertEquals(1133, sc.getScreenId());
 
 	}
-	
+
 	@Test
 	public void testAddScreenException() throws Exception {
 		theater = new Theater(2134, "shiva", "hyderabad", null, null, "rahul", "9876543210");
-		Theater th=adminDao.addTheater(theater);
-		screen = new Screen(1133 ,th.getTheaterId(),"screen1", null, null, 12, 12);
+		Theater th = adminDao.addTheater(theater);
+		screen = new Screen(1133, th.getTheaterId(), "screen1", null, null, 12, 12);
 		adminDao.addScreen(screen);
 		assertThrows(MovieException.class, () -> adminDao.addScreen(screen));
 
@@ -82,8 +82,8 @@ class TestMovie {
 	@Test
 	public void testDeleteScreen() throws Exception {
 		theater = new Theater(2134, "shiva", "hyderabad", null, null, "rahul", "9876543210");
-		Theater th =adminDao.addTheater(theater);
-		screen = new Screen(1133 ,th.getTheaterId(),"screen1", null, null, 12, 12);
+		Theater th = adminDao.addTheater(theater);
+		screen = new Screen(1133, th.getTheaterId(), "screen1", null, null, 12, 12);
 		adminDao.addScreen(screen);
 		boolean flag = adminDao.deleteScreen(1133);
 
@@ -93,10 +93,10 @@ class TestMovie {
 	@Test
 	public void testDeleteScreenException() throws Exception {
 		theater = new Theater(2134, "shiva", "hyderabad", null, null, "rahul", "9876543210");
-		Theater th =adminDao.addTheater(theater);
-		screen = new Screen(1133 ,th.getTheaterId(),"screen1", null, null, 12, 12);
+		Theater th = adminDao.addTheater(theater);
+		screen = new Screen(1133, th.getTheaterId(), "screen1", null, null, 12, 12);
 		adminDao.addScreen(screen);
-		
+
 		assertThrows(MovieException.class, () -> adminDao.addScreen(screen));
 	}
 }

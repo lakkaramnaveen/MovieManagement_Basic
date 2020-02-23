@@ -34,6 +34,14 @@ public class AdminServiceImpl implements AdminService {
 			throw new MovieException("Theater Name must not be Null ");
 		}
 
+
+		String cname = theater.getTheaterCity();// getting city name
+		boolean flag12 = validateName(cname);// calling validateName with passing city name
+
+		if (flag12 == true) {
+			throw new MovieException("City Name must not be Null ");
+		}
+		
 		String mname = theater.getManagerName();// getting manager name
 		boolean flag2 = validateName(mname);// calling validateName with passing manager name
 
